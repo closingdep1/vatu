@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signed in</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <div class="bg" aria-hidden="true"></div>
+      <div class="bg-veil" aria-hidden="true"></div>
+
+      <main class="stage">
+        <section class="panel" aria-labelledby="welcome-title">
+          <h1 id="welcome-title">Signed in</h1>
+          <p class="form-status">
+            Verified through <%= claims.provider %> as
+            <strong><%= claims.name %></strong> (<%= claims.email %>).
+          </p>
+          <p class="provider-heading">
+            Subject <code><%= claims.sub %></code> · <%= claims.at %>
+          </p>
+
+          <form class="signin-form" action="/auth/logout" method="post">
+            <button type="submit" class="login-btn">Sign out</button>
+          </form>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

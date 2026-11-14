@@ -1,0 +1,23 @@
+{
+  "name": "signin-oidc",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "Express sign-in service using OpenID Connect (Authorization Code + PKCE) for Microsoft Entra ID and Google Workspace.",
+  "dependencies": {
+    "cookie-session": "^2.1.1",
+    "ejs": "^7.0.2",
+    "express": "^5.3.0",
+    "openid-client": "^6.9.0"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  }
+}
