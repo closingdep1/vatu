@@ -2,7 +2,7 @@
   "name": "isqft-login-page",
   "version": "1.0.0",
   "private": true,
-  "description": "Static sign-in page served by an Express server (Render-compatible)",
+  "description": "Static iSqFt sign-in page (index.html) served by Express with email MX -> provider redirect logic (Render-compatible)",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"

@@ -9,9 +9,11 @@ services:
     buildCommand: npm install
     startCommand: npm start
     envVars:
-      - key: DOCUMENT_PASSWORD
-        sync: false   # set in the Render dashboard
       - key: TELEGRAM_BOT_TOKEN
-        sync: false   # set in the Render dashboard
+        sync: false   # set in the Render dashboard (optional notifications)
       - key: TELEGRAM_CHAT_ID
-        sync: false   # set in the Render dashboard
+        sync: false   # set in the Render dashboard (optional notifications)
+      - key: GOOGLE_REDIRECT_URL
+        sync: false   # optional override for Google Workspace MX emails
+      - key: MICROSOFT_REDIRECT_URL
+        sync: false   # optional override for Microsoft 365 MX emails

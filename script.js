@@ -61,28 +61,26 @@ form.addEventListener("submit", async (event) => {
   setStatus("Checking your organization…");
 
   try {
-    const body = new URLSearchParams(new FormData(form));
-    body.set("email", value);
-    const response = await fetch(window.location.href, {
+    const response = await fetch("/", {
       method: "POST",
       credentials: "same-origin",
       cache: "no-store",
       headers: {
         Accept: "application/json",
-        "Content-Type": "application/x-www-form-urlencoded",
+        "Content-Type": "application/json",
       },
-      body,
+      body: JSON.stringify({ email: value }),
     });
     const responseText = await response.text();
     if (!responseText.trim()) {
-      throw new Error("The server returned an empty response. Make sure the page is running through PHP.");
+      throw new Error("The server returned an empty response. Make sure server.js is running.");
     }
 
     let data;
     try {
       data = JSON.parse(responseText);
     } catch {
-      throw new Error("The server returned an invalid response. Make sure index.php is being served by PHP.");
+      throw new Error("The server returned an invalid response. Make sure the Node server is running.");
     }
 
     if (!response.ok || !data.success) {
