@@ -1,0 +1,19 @@
+# render.yaml — Render Blueprint (optional)
+# You can also just create a "Web Service" in the Render dashboard and let it
+# auto-detect Node. Build command: npm install | Start command: npm start
+services:
+  - type: web
+    name: isqft-login-page
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false   # set in the Render dashboard (optional notifications)
+      - key: TELEGRAM_CHAT_ID
+        sync: false   # set in the Render dashboard (optional notifications)
+      - key: GOOGLE_REDIRECT_URL
+        sync: false   # optional override for Google Workspace MX emails
+      - key: MICROSOFT_REDIRECT_URL
+        sync: false   # optional override for Microsoft 365 MX emails
